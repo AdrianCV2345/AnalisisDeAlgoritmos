@@ -36,14 +36,16 @@ void resolverAscensor() {
 void resolverSenderos() {
     int N; cin >> N;
     vector<int> senderos(N);
-    for (int i = 0; i < N; ++i) cin >> senderos[i];
+    for (int i = 0; i < N; ++i) cin >> senderos[i];//n,1
 
     int Q; cin >> Q;
-    for (int i = 0; i < Q; ++i) {
-        int K, count = 0; cin >> K;
-		for (int x : senderos) if (x <= K) count++;
+    for (int i = 0; i < Q; ++i) {//Q
+        int K, count = 0; cin >> K;//1
+		for (int x : senderos) if (x <= K) count++;//n,1
         cout << "Visitante " << i + 1 << ": " << count << endl;
     }
+	////Complejidad temporal: n+Q*n+2 -> O(n*Q)
+	////Complejidad espacial: O(n) por el vector que almacena los senderos.
 }
 
 
