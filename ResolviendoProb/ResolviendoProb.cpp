@@ -33,10 +33,23 @@ void resolverAscensor() {
 	///Complejidad espacial: O(n) por la pila que puede almacenar hasta n elementos en el peor caso.
 }
 
+void resolverSenderos() {
+    int N; cin >> N;
+    vector<int> senderos(N);
+    for (int i = 0; i < N; ++i) cin >> senderos[i];
+
+    int Q; cin >> Q;
+    for (int i = 0; i < Q; ++i) {
+        int K, count = 0; cin >> K;
+		for (int x : senderos) if (x <= K) count++;
+        cout << "Visitante " << i + 1 << ": " << count << endl;
+    }
+}
 
 
 int main() {
-    resolverAscensor();
+    //resolverAscensor();
+	resolverSenderos();
     
     return 0;
 }

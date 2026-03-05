@@ -1,3 +1,3 @@
 ﻿  ResolviendoProb.cpp
-C:\Universidad\7mo Semestre\Analisis de algoritmos\ResolviendoProb\ResolviendoProb\ResolviendoProb.cpp(25,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Universidad\7mo Semestre\Analisis de algoritmos\ResolviendoProb\ResolviendoProb\ResolviendoProb.cpp(25,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ResolviendoProb.vcxproj -> C:\Universidad\7mo Semestre\Analisis de algoritmos\ResolviendoProb\x64\Debug\ResolviendoProb.exe
