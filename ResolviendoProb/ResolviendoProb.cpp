@@ -10,25 +10,30 @@ void resolverAscensor() {
     cin >> n;
     stack<int> pila;
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {//n
         int cmd;
         cin >> cmd;
         if (cmd == 0) {
-            if (!pila.empty()) pila.pop(); 
+            if (!pila.empty()) pila.pop();//1 
         }
         else {
-            pila.push(cmd); 
+            pila.push(cmd); //1
         }
     }
 
-    int totalPisos = 0;
-    int cantidad = pila.size();
-    while (!pila.empty()) {
-        totalPisos += pila.top();
-        pila.pop();
+    int totalPisos = 0;//1
+	int cantidad = pila.size();//1
+    while (!pila.empty()) {//n
+        totalPisos += pila.top();//3
+        pila.pop();//1
     }
     cout << "Piso final: " << totalPisos << "\nMovimientos: " << cantidad << endl;
+
+	///Complejidad temporal: 6n+2 -> 0(n)
+	///Complejidad espacial: O(n) por la pila que puede almacenar hasta n elementos en el peor caso.
 }
+
+
 
 int main() {
     resolverAscensor();
