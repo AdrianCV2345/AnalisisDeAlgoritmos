@@ -2,7 +2,7 @@
 #include <vector>
 #include <queue>
 #include <stack>
-
+#include <algorithm>
 using namespace std;
 
 void resolverAscensor() {
@@ -48,10 +48,28 @@ void resolverSenderos() {
 	////Complejidad espacial: O(n) por el vector que almacena los senderos.
 }
 
+void resolverTop3() {
+    int n;
+    cin >> n;
+    vector<int> top;
+
+    for (int i = 0; i < n; ++i) {
+        int pts;
+        cin >> pts;
+        top.push_back(pts);
+
+        sort(top.begin(), top.end(), greater<int>());
+        if (top.size() > 3) top.pop_back();
+
+        cout << "Top:";
+        for (int p : top) cout << " " << p;
+        cout << endl;
+    }
+}
 
 int main() {
     //resolverAscensor();
-	resolverSenderos();
-    
+	//resolverSenderos();
+	resolverTop3();
     return 0;
 }
