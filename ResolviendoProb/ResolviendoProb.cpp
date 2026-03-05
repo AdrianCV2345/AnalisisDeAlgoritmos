@@ -53,18 +53,20 @@ void resolverTop3() {
     cin >> n;
     vector<int> top;
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {//n
         int pts;
         cin >> pts;
-        top.push_back(pts);
+        top.push_back(pts);//1
 
-        sort(top.begin(), top.end(), greater<int>());
-        if (top.size() > 3) top.pop_back();
+		sort(top.begin(), top.end(), greater<int>());//n*log(n)
+		if (top.size() > 3) top.pop_back();//1
 
         cout << "Top:";
-        for (int p : top) cout << " " << p;
+        for (int p : top) cout << " " << p;//n
         cout << endl;
     }
+	//Complejidad temporal: n*(1 + n*log(n) + 1 + n) -> O(n^2*log(n))
+	//Complejidad espacial: O(1) ya que el vector top se mantiene con un máximo de 3 elementos.
 }
 
 int main() {
