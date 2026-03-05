@@ -69,9 +69,41 @@ void resolverTop3() {
 	//Complejidad espacial: O(1) ya que el vector top se mantiene con un máximo de 3 elementos.
 }
 
+void resolverTorneoRobots() {
+    int N;
+    if (!(cin >> N)) return;
+    priority_queue<int, vector<int>, greater<int>> pq;
+
+    for (int i = 0; i < N; ++i) {
+        int energia;
+        cin >> energia;
+        pq.push(energia);
+    }
+
+    int rondas = 0;
+    while (pq.size() > 1) {
+        int r1 = pq.top(); pq.pop(); 
+        int r2 = pq.top(); pq.pop(); 
+        rondas++;
+
+        if (r1 == r2) {
+            pq.push(r1 * 2);  
+        }
+        else {
+            pq.push(r2 - r1); 
+        }
+    }
+
+    if (!pq.empty()) {
+        cout << "Campeon con energia: " << pq.top() << endl;
+        cout << "Rondas: " << rondas << endl;
+    }
+}
+
 int main() {
+	resolverTorneoRobots();
     //resolverAscensor();
 	//resolverSenderos();
-	resolverTop3();
+	//resolverTop3();
     return 0;
 }
